@@ -70,6 +70,9 @@ void loop() {
         menu.subSelection = 0;
       }
     }
+//  if (arduboy.justPressed(A_BUTTON)) {
+//    mode = modeCanvas; // Quickly return to DRAW from the menu
+//  }
   }
   else if (mode == modeSubMenu) {
     if (menu.subMenu()) {

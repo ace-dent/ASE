@@ -190,11 +190,9 @@ bool Menu::subMenu() {
       font6.setCursor(subMenuLeft+1,1);      
       font6.print(F("ARDUBOY SPRITE\n"
                     "EDITOR (ASE)\n"
-                    "VERSION 0.3\n\n"
-                    "PAUL WASSON,\n"
-                    "NOV 2019\n\n"
-                    "GAME JAM 4\n"
-                    "SUBMISSION"));
+                    "VERSION 0.4\n\n"
+                    "BY\n"
+                    "PAUL WASSON"));
       return false;
   }
 }
@@ -233,6 +231,9 @@ bool Menu::readSelectButtons(uint8_t &selection, uint8_t selectionMax) {
     else {
       selection--;
     }
+  }
+  else if (arduboy.justPressed(A_BUTTON)) {
+    selection = 0; // Shortcut back to DRAW from any previous menu item
   }
   return arduboy.justPressed(B_BUTTON);
 }

@@ -181,7 +181,7 @@ void SpriteBuffer::saveEEPROM() {
   EEPROM.put(eepromFrames,menu.frameTotal);
   EEPROM.put(eepromWidth,menu.sizeWidth);
   EEPROM.put(eepromHeight,menu.sizeHeight);
-
+// Save preview settings
   for (uint16_t offset=0; offset < menu.bufferSize; offset++) {
       EEPROM.put(eepromSprite+offset,sprite[offset]);
   }
@@ -192,7 +192,7 @@ uint16_t SpriteBuffer::loadEEPROM() {
   EEPROM.get(eepromFrames,menu.frameTotal);
   EEPROM.get(eepromWidth,menu.sizeWidth);
   EEPROM.get(eepromHeight,menu.sizeHeight);
- 
+ // Load preview settings
   menu.frameCurrent = 0;
   menu.newSize();
 
